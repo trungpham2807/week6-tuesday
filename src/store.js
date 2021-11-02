@@ -66,12 +66,18 @@ const initialState = {
 
     if(action.type === 'editTodo'){
         const editTodos = state.todos.map((todo) => {
-          if(todo.id === action.payload.id){
-            todo.text = action.payload.text
+          console.log("ol",todo.text)
+          console.log("hi",action.payload)
+
+          if(todo.id === action.payload){
+            todo.text = action.payload
           }
-          return todo
-           
-        })
+          return todo;
+               
+        }) 
+        return{
+        todos: editTodos
+        }
     }
     
       return state

@@ -4,7 +4,7 @@ import React, {useState} from "react";
 // import {FilterTodo} from "./Filter" 
 const TodoListItem = ({ id, text, isComplete }) => {
     const dispatch = useDispatch()
-    const [edit, setEdit] = useState('hi')
+    const [edit, setEdit] = useState('none')
 
 const handleDelete =() => {
     dispatch({type: "deleteTodo", payload: id})
@@ -23,10 +23,11 @@ const filterTodo = () => {
 
 }
 
-const handleEdit = (e) => {
-  e.preventDefault()
-  setEdit('block')
+const handleEdit = () => {
+  // e.preventDefault()
   dispatch({type: "editTodo", payload:id})
+  setEdit("")
+
 
   }
 
