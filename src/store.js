@@ -65,15 +65,13 @@ const initialState = {
     }
 
     if(action.type === 'editTodo'){
-        // const editTodos = state.todos.filter((todo)=> todo.id !== action.payload )
-        //     if(todo.id !== action.payload.id){
-        //         // console.log("haha")
-        //         return state 
-        //     }return {
-        //         ...state,
-        //         text: action.payload
-        //     }
-        // })
+        const editTodos = state.todos.map((todo) => {
+          if(todo.id === action.payload.id){
+            todo.text = action.payload.text
+          }
+          return todo
+           
+        })
     }
     
       return state

@@ -4,6 +4,7 @@ import React, {useState} from "react";
 // import {FilterTodo} from "./Filter" 
 const TodoListItem = ({ id, text, isComplete }) => {
     const dispatch = useDispatch()
+    const [edit, setEdit] = useState('hi')
 
 const handleDelete =() => {
     dispatch({type: "deleteTodo", payload: id})
@@ -22,8 +23,10 @@ const filterTodo = () => {
 
 }
 
-const handleEdit = () => {
-    dispatch({type: "editTodo", payload:id})
+const handleEdit = (e) => {
+  e.preventDefault()
+  setEdit('block')
+  dispatch({type: "editTodo", payload:id})
 
   }
 
@@ -44,7 +47,7 @@ const handleEdit = () => {
   </div>
     
 
-  <button className="todolist-button bt2" onClick = {handleEdit}> Edit </button>
+  <button className="todolist-button bt2" onClick = {handleEdit}>Edit </button>
 {/* color checked */}
 <span />
 <div className="todolist-checkbox">
