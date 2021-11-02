@@ -1,0 +1,23 @@
+
+.TodoListItem{
+    display: flex; 
+    justify-content:space-around;
+    margin: 40px;
+}
+.TodoListItem .todolist-button{
+    border: 2px solid black;
+}
+.TodoListItem .bt1{
+    background-color: red;
+    width: 50px;
+    height: 50px;
+}
+.TodoListItem .bt2{
+    background-color: gray;
+    width: 50px;
+    height: 50px;
+}
+.TodoListItem input{
+    width: 50px;
+    height: 50px;
+}
